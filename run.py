@@ -13,7 +13,7 @@ root=Tk()
 
 questions = ["what is you name?","what is your favourite food?","who are you ?"]
 
-#### 1. the app load a question randomly from the questions list
+#### 1. the app loads a question randomly from the questions list
 def loadquestion():
   
     T = Text(wrapper, height = 5, width = 52)
@@ -21,13 +21,14 @@ def loadquestion():
     T.insert(1.0, random.choice(questions))
     T.configure(state='disabled')
     T.pack()
-### 2. when you hit record button the app will start recording for 10 seconds and saves the file to the same run.py root unter the name my_Audio_file.flac
+    
+### 2. when you hit the record button the app will start recording for 10 seconds and then saves the file to the same run.py root under the name my_Audio_file.flac
 def startrecord():
     myrecording = sd.rec(int(duration * fs),samplerate=fs, channels=2)
     sd.wait()
     return sf.write('./my_Audio_file.flac', myrecording, fs)
 
-### 3. closes the window when you press quit button
+### 3.this method closes the window when you press quit button
 def close_window():
     root.destroy()
     
@@ -42,7 +43,7 @@ l.config(font =("Courier", 14))
 l.pack()
 loadquestion()
 
-####### recor button ########
+####### record button ########
 btn1= Button(wrapper, text="Record", command=startrecord)
 btn1.pack(side=tk.LEFT, padx=50, pady=50)
 
