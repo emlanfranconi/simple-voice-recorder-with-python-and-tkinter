@@ -1,4 +1,4 @@
-# simple-recorder-with-python-and-tkinter
+# simple-voice-recorder-with-python-and-tkinter
 
 to run this app use the following command where your run.py file is: 
 
